@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sridharanya S | Portfolio</title>
+<meta name="description" content="Portfolio of Sridharanya S - Computer Science and Design Engineering student, graphic designer and world-record yoga achiever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060b1a; --bg2:#0b1430; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.09);
+  --text:#e8ecf7; --muted:#9aa6c4; --gold:#e4b95c; --gold2:#f6dfa4; --blue:#5b8cff; --navy:#0a2a6b;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:
+   radial-gradient(900px 500px at 85% -5%,rgba(91,140,255,.22),transparent 60%),
+   radial-gradient(700px 500px at -5% 35%,rgba(228,185,92,.10),transparent 60%),
+   radial-gradient(800px 600px at 100% 90%,rgba(10,42,107,.45),transparent 60%),var(--bg)}
+a{color:inherit;text-decoration:none}
+.container{width:min(1140px,92%);margin:auto}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2}
+.gold{background:linear-gradient(120deg,var(--gold),var(--gold2) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:50;transition:.3s;padding:18px 0}
+nav.scrolled{background:rgba(6,11,26,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:12px 0}
+.nav-in{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700}
+.logo span{color:var(--gold)}
+.links{display:flex;gap:30px;list-style:none}
+.links a{font-size:.88rem;color:var(--muted);letter-spacing:.04em;transition:.25s;position:relative}
+.links a:hover{color:var(--gold)}
+.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--gold);transition:.3s}
+.links a:hover::after{width:100%}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:6px 12px;border-radius:8px;font-size:1.1rem;cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line);border-radius:50px;background:var(--card);font-size:.8rem;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase}
+.tag i{width:8px;height:8px;border-radius:50%;background:#43e08a;box-shadow:0 0 0 4px rgba(67,224,138,.18)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin:22px 0 14px}
+.role{font-size:1.2rem;color:var(--muted);min-height:2em}
+.role b{color:var(--text);font-weight:500}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--gold);margin-left:3px;vertical-align:middle;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{max-width:540px;color:var(--muted);margin:20px 0 34px}
+.btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{padding:14px 30px;border-radius:50px;font-weight:500;font-size:.95rem;transition:.3s;display:inline-flex;gap:8px;align-items:center;cursor:pointer;border:none;font-family:inherit}
+.btn.primary{background:linear-gradient(120deg,var(--gold),var(--gold2));color:#1a1405;box-shadow:0 10px 30px rgba(228,185,92,.25)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(228,185,92,.38)}
+.btn.ghost{border:1px solid var(--line);background:var(--card);color:var(--text)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+
+.photo-wrap{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto}
+.photo-wrap::before{content:"";position:absolute;inset:-14px;border-radius:50%;
+  background:conic-gradient(from 0deg,var(--gold),var(--blue),var(--navy),var(--gold));animation:spin 9s linear infinite;filter:blur(2px)}
+.photo-wrap::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--bg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo{position:absolute;inset:6px;border-radius:50%;z-index:2;overflow:hidden;background:linear-gradient(135deg,#13204a,#0a1230);display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.photo .initials{font-family:'Playfair Display',serif;font-size:6rem;font-weight:700}
+.float{position:absolute;z-index:3;padding:10px 16px;border-radius:14px;background:rgba(11,20,48,.85);backdrop-filter:blur(10px);border:1px solid var(--line);font-size:.8rem;display:flex;gap:8px;align-items:center;animation:float 5s ease-in-out infinite}
+.float.a{top:6%;right:-8%}
+.float.b{bottom:12%;left:-10%;animation-delay:-2.5s}
+@keyframes float{50%{transform:translateY(-12px)}}
+
+/* SECTIONS */
+section{padding:100px 0}
+.eyebrow{color:var(--gold);letter-spacing:.25em;text-transform:uppercase;font-size:.78rem;margin-bottom:12px}
+.title{font-size:clamp(2rem,4vw,3rem);margin-bottom:50px}
+.title::after{content:"";display:block;width:70px;height:3px;margin-top:18px;border-radius:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+.glass{background:var(--card);border:1px solid var(--line);border-radius:22px;backdrop-filter:blur(8px);transition:.35s}
+.glass:hover{border-color:rgba(228,185,92,.4);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.about-text{padding:38px;font-size:1.05rem;color:#c6cee4}
+.about-text strong{color:var(--gold2);font-weight:500}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat{padding:26px;text-align:center}
+.stat b{font-family:'Playfair Display',serif;font-size:2.5rem;display:block}
+.stat span{font-size:.82rem;color:var(--muted)}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.skill{padding:30px 22px;text-align:center}
+.skill .ic{font-size:2rem;width:62px;height:62px;margin:0 auto 14px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(228,185,92,.18),rgba(91,140,255,.18));border:1px solid var(--line)}
+.skill h3{font-size:1.05rem;font-family:'Inter';font-weight:500}
+.skill p{font-size:.82rem;color:var(--muted)}
+.langs{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;align-items:center}
+.langs span.l{color:var(--muted);margin-right:6px}
+.chip{padding:8px 20px;border-radius:50px;border:1px solid var(--line);background:var(--card);font-size:.88rem}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--blue),transparent)}
+.tl-item{position:relative;padding:26px 30px;margin-bottom:22px}
+.tl-item::before{content:"";position:absolute;left:-35px;top:34px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--gold);box-shadow:0 0 0 5px rgba(228,185,92,.14)}
+.tl-item .when{font-size:.78rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.tl-item h3{font-size:1.3rem;margin:4px 0}
+.tl-item p{color:var(--muted);font-size:.95rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.sub{font-size:1.5rem;margin-bottom:26px;display:flex;align-items:center;gap:12px}
+
+/* CERTS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.cert{padding:28px;position:relative;overflow:hidden}
+.cert::after{content:"";position:absolute;right:-30px;top:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(var(--gold),transparent 70%);opacity:.12}
+.cert .by{font-size:.78rem;color:var(--gold);letter-spacing:.14em;text-transform:uppercase}
+.cert h3{font-size:1.1rem;font-family:'Inter';font-weight:500;margin-top:8px}
+
+/* ACHIEVEMENTS */
+.ach{background:linear-gradient(135deg,rgba(228,185,92,.10),rgba(91,140,255,.08));border:1px solid rgba(228,185,92,.25);border-radius:28px;padding:50px}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:10px}
+.ach-card{text-align:center;padding:30px 20px;border-radius:20px;background:rgba(6,11,26,.55);border:1px solid var(--line);transition:.3s}
+.ach-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.ach-card .em{font-size:2.6rem}
+.ach-card h3{font-size:1.15rem;margin:10px 0 6px}
+.ach-card p{color:var(--muted);font-size:.88rem}
+.cc{margin-top:40px;display:grid;gap:12px}
+.cc li{list-style:none;padding:14px 20px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:#c6cee4;font-size:.93rem;display:flex;gap:12px}
+.cc li::before{content:"✦";color:var(--gold)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px}
+.c-list{display:grid;gap:18px}
+.c-item{padding:22px 26px;display:flex;gap:18px;align-items:center}
+.c-item .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;background:linear-gradient(135deg,rgba(228,185,92,.2),rgba(91,140,255,.2));flex-shrink:0}
+.c-item small{color:var(--muted);display:block;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+.c-item span{word-break:break-word}
+form{padding:36px;display:grid;gap:16px}
+input,textarea{width:100%;padding:15px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--text);font-family:inherit;font-size:.95rem;outline:none;transition:.25s}
+input:focus,textarea:focus{border-color:var(--gold);background:rgba(228,185,92,.05)}
+textarea{min-height:130px;resize:vertical}
+footer{text-align:center;padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(34px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero-grid,.about-grid,.two,.contact-grid{grid-template-columns:1fr}
+  .hero{text-align:center}.hero p.lead{margin-inline:auto}.btns{justify-content:center}
+  .photo-wrap{order:-1;width:min(300px,75vw)}
+  .float.a{right:-4%}.float.b{left:-4%}
+  .links{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(6,11,26,.97);padding:20px 6%;gap:18px;display:none;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}.menu{display:block}
+  .ach{padding:30px 20px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container nav-in">
+    <a href="#home" class="logo">Sridharanya<span>.</span>S</a>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu" id="menu" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag"><i></i> Open to internships &amp; opportunities</span>
+      <h1>Hi, I'm <span class="gold">Sridharanya S</span></h1>
+      <div class="role">I'm a <b id="typed"></b><span class="cursor"></span></div>
+      <p class="lead">Computer Science and Design Engineering student who blends analytical thinking with creative design to solve real-world problems.</p>
+      <div class="btns">
+        <a href="#contact" class="btn primary">Let's Connect →</a>
+        <a href="https://www.linkedin.com/in/sridharanya" target="_blank" rel="noopener" class="btn ghost">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo">
+        <span class="initials gold">SS</span>
+        <!-- Save your photo as photo.jpg next to this file to show it here -->
+        <img src="proff.jpeg" alt="Sridharanya S" onerror="this.style.display='none'">
+      </div>
+      <div class="float a">🏆 3 World Records</div>
+      <div class="float b">🎨 Designer &amp; Developer</div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="eyebrow rv">About Me</p>
+    <h2 class="title rv">Where logic meets <span class="gold">creativity</span></h2>
+    <div class="about-grid">
+      <div class="glass about-text rv">
+        <p>I am a dedicated <strong>Computer Science and Design Engineering</strong> student at S.N.S College of Technology, Coimbatore, skilled in combining analytical thinking with creative design to solve real-world problems.</p>
+        <br>
+        <p>From building with <strong>Python, SQL, HTML and Django</strong> to crafting visuals as a <strong>graphic designer</strong> and editing video, I enjoy turning ideas into polished, useful experiences. Beyond the screen, I am a <strong>world-record-holding yoga achiever</strong>, bringing the same discipline and focus to everything I do.</p>
+      </div>
+      <div class="stats rv">
+        <div class="glass stat"><b class="gold" data-count="3">0</b><span>World Records in Yoga</span></div>
+        <div class="glass stat"><b class="gold" data-count="3">0</b><span>International Competitions</span></div>
+        <div class="glass stat"><b class="gold" data-count="4">0</b><span>Certifications</span></div>
+        <div class="glass stat"><b class="gold" data-count="2">0</b><span>Internships</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="eyebrow rv">What I Do</p>
+    <h2 class="title rv">Skills &amp; <span class="gold">Expertise</span></h2>
+    <div class="skill-grid">
+      <div class="glass skill rv"><div class="ic">🐍</div><h3>Python</h3><p>Programming &amp; problem solving</p></div>
+      <div class="glass skill rv"><div class="ic">🗄️</div><h3>SQL</h3><p>Databases &amp; queries</p></div>
+      <div class="glass skill rv"><div class="ic">🌐</div><h3>HTML &amp; Django</h3><p>Full stack web development</p></div>
+      <div class="glass skill rv"><div class="ic">🎨</div><h3>Graphic Design</h3><p>Posters, branding &amp; visuals</p></div>
+      <div class="glass skill rv"><div class="ic">🧠</div><h3>Problem Solving</h3><p>Analytical &amp; design thinking</p></div>
+      <div class="glass skill rv"><div class="ic">🎬</div><h3>Video Editing</h3><p>Storytelling through motion</p></div>
+    </div>
+    <div class="langs rv">
+      <span class="l">Languages:</span>
+      <span class="chip">English</span><span class="chip">தமிழ் Tamil</span><span class="chip">हिन्दी Hindi</span>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <p class="eyebrow rv">My Path</p>
+    <h2 class="title rv">Education &amp; <span class="gold">Experience</span></h2>
+    <div class="two">
+      <div>
+        <h3 class="sub rv">🎓 Education</h3>
+        <div class="tl">
+          <div class="glass tl-item rv">
+            <div class="when">2025 – 2029</div>
+            <h3>S.N.S College of Technology</h3>
+            <p>Computer Science and Design Engineering · Coimbatore</p>
+          </div>
+          <div class="glass tl-item rv">
+            <div class="when">2023 – 2025</div>
+            <h3>P.R.G Velappanaidu Matric Higher Secondary School</h3>
+            <p>Higher Secondary School</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub rv">💼 Internships</h3>
+        <div class="tl">
+          <div class="glass tl-item rv">
+            <div class="when">2026</div>
+            <h3>Full Stack Development</h3>
+            <p>CodriveIT</p>
+          </div>
+          <div class="glass tl-item rv">
+            <div class="when">2025</div>
+            <h3>Graphic Designer</h3>
+            <p>InAmigos Foundation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="container">
+    <p class="eyebrow rv">Learning</p>
+    <h2 class="title rv">Certifi<span class="gold">cations</span></h2>
+    <div class="cert-grid">
+      <div class="glass cert rv"><span class="by">IBM</span><h3>Enterprise Design Thinking Practitioner</h3></div>
+      <div class="glass cert rv"><span class="by">Scaler</span><h3>Python Course for Beginners</h3></div>
+      <div class="glass cert rv"><span class="by">Scaler</span><h3>Becoming a MAANG Engineer</h3></div>
+      <div class="glass cert rv"><span class="by">Databricks</span><h3>Accredited Generative AI Fundamentals</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="ach rv">
+      <p class="eyebrow">Beyond the Code</p>
+      <h2 class="title">Achievements &amp; <span class="gold">Awards</span></h2>
+      <div class="ach-grid">
+        <div class="ach-card"><div class="em">🏆</div><h3>3 World Records</h3><p>Achiever of 3 World Records in Yoga</p></div>
+        <div class="ach-card"><div class="em">👑</div><h3>Champion of Champion</h3><p>Awarded the title of Champion of Champion</p></div>
+        <div class="ach-card"><div class="em">🌍</div><h3>International Prizes</h3><p>Participated and won prizes in 3 International Yoga Competitions</p></div>
+      </div>
+      <h3 class="sub" style="margin-top:44px">Co-curricular Activities</h3>
+      <ul class="cc">
+        <li>Certificate of Participation in Treasure Hunt, Chakravuyga 2025</li>
+        <li>Certificate of Participation in Poster Designing Competition, Talent Hunt</li>
+        <li>Databricks Accredited Generative AI Fundamentals</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="eyebrow rv">Get in Touch</p>
+    <h2 class="title rv">Let's build something <span class="gold">together</span></h2>
+    <div class="contact-grid">
+      <div class="c-list">
+        <a class="glass c-item rv" href="tel:+916380795347"><div class="ic">📞</div><div><small>Phone</small><span>6380795347</span></div></a>
+        <a class="glass c-item rv" href="mailto:sridharanya18@gmail.com"><div class="ic">✉️</div><div><small>Email</small><span>sridharanya18@gmail.com</span></div></a>
+        <a class="glass c-item rv" href="https://www.linkedin.com/in/sridharanya" target="_blank" rel="noopener"><div class="ic">💼</div><div><small>LinkedIn</small><span>linkedin.com/in/sridharanya</span></div></a>
+        <div class="glass c-item rv"><div class="ic">📍</div><div><small>Address</small><span>28, Muruga Bhavan, Velan Nagar, Palani – 624601</span></div></div>
+      </div>
+      <form class="glass rv" id="form">
+        <input type="text" id="n" placeholder="Your name" required>
+        <input type="email" id="e" placeholder="Your email" required>
+        <textarea id="m" placeholder="Your message" required></textarea>
+        <button class="btn primary" type="submit">Send Message ✦</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Sridharanya S · Designed with passion</footer>
+
+<script>
+// Nav
+const nav=document.getElementById('nav'),links=document.getElementById('links');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+document.getElementById('menu').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+// Typing effect
+const words=['Computer Science & Design Engineer','Graphic Designer','Full Stack Learner','World Record Yoga Achiever'];
+let w=0,c=0,del=false;const el=document.getElementById('typed');
+(function type(){
+  const s=words[w];
+  el.textContent=s.slice(0,c);
+  if(!del&&c++===s.length){del=true;return setTimeout(type,1500)}
+  if(del&&--c===0){del=false;w=(w+1)%words.length}
+  setTimeout(type,del?35:70);
+})();
+
+// Reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(n=>{
+    const t=+n.dataset.count;let v=0;
+    const id=setInterval(()=>{n.textContent=++v;if(v>=t)clearInterval(id)},260);
+  });
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*90+'ms';io.observe(e)});
+
+// Contact form -> opens email client
+document.getElementById('form').addEventListener('submit',ev=>{
+  ev.preventDefault();
+  const n=encodeURIComponent(document.getElementById('n').value);
+  const e=document.getElementById('e').value;
+  const m=encodeURIComponent(document.getElementById('m').value+'\n\nFrom: '+e);
+  location.href=`mailto:sridharanya18@gmail.com?subject=Portfolio enquiry from ${n}&body=${m}`;
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
